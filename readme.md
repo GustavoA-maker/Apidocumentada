@@ -51,3 +51,32 @@ Adicionar arquivos e pastas no .gitigore
 Node_modules
 .env
 ```
+Adicionar a porta do servidor no arquivo .env
+```
+PORT = 3000
+```
+Configuração básica da API com express
+```
+// Importar o pacote express
+const espress = require('express');
+
+// Instanciar o express na variavel app
+const app = express();
+
+// Recuperar o pacote dotenv
+const dotenv = require('dotenv').config();
+
+// Importando variavel do arquivo .env
+const PORT = process.env.PORT;
+
+// Testando o servidor
+app.listen(PORT, () => console.log(`Running at port ${PORT}!`));
+```
+Criar comando para rodar o servidor no arquivo package.json 
+```
+"start": "nodemon scr/server.js"
+```
+Rodar o servidor
+```
+npm start
+```
